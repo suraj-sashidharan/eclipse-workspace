@@ -1,4 +1,4 @@
 "Dynamic Web Project" created with Eclipse.
-Maven not used.
+Maven not used here.
 Eclipse allows WAR file creation with right click on project name and Export, WAR.
 JARs that the app depends on can be added to WebContent/WEB-INF/lib and they become available in the compile classpath and also in WEB-INF/lib within the WAR. For eg., jstl-1.2.jar
