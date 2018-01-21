@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Contact</title>
+<title>Contacts</title>
 </head>
 <body>
     <%--= request.getParameter("name") --%>
@@ -16,7 +16,7 @@
 	<label>${contact["myArray"]["1"]}</label>
 	<label>${contact.myArray[0]}</label>
 
-	<b>Contacts</b>
+	<b>Contacts!</b>
 	<form method="post" action="helloWorld.jsp">
 		<label>Name</label> <input type="text" name="name"
 			value='<jsp:getProperty property="name" name="contact"/>'></input>		
