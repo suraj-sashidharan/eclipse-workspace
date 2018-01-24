@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://mydynamicwebproject.suraj.edu" prefix="mtl" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -27,5 +28,8 @@
 			value='<jsp:getProperty property="mobileNum" name="contact"/>'></input>
 		<input type="submit"></input>
 	</form>
+	<mtl:mft check="${1<2}" kount="3">
+	   <c:out value="${x}"/>
+	</mtl:mft>
 </body>
 </html>
