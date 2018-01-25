@@ -1,7 +1,11 @@
 package edu.suraj.mydynamicwebproject;
 
+import java.io.IOException;
+import java.util.Locale;
+
 import javax.servlet.jsp.JspContext;
 import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.Tag;
 
@@ -14,6 +18,21 @@ public class MyFirstTag implements Tag {
 
 	@Override
 	public int doEndTag() throws JspException {
+		JspWriter jspWriter = jspContext.getOut();
+		Locale locale = Locale.getDefault();
+		try {
+			jspWriter.write("<br/>");
+			jspWriter.write("Country : " + locale.getCountry() + "<br/>");
+			jspWriter.write("Display Country : " + locale.getDisplayCountry() + "<br/>");
+			jspWriter.write("Language : " + locale.getLanguage() + "<br/>");
+			jspWriter.write("Display Language : " + locale.getDisplayLanguage() + "<br/>");
+			jspWriter.write("Locale : " + locale.getDisplayName() + "<br/>");			
+			jspWriter.write("Locale : " + locale.toString() + "<br/>");
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		
+		jspContext.setAttribute("bla", "blahblah");
 		if (true) {
 			return EVAL_PAGE;
 		} else {
@@ -23,8 +42,10 @@ public class MyFirstTag implements Tag {
 
 	@Override
 	public int doStartTag() throws JspException {
-		System.out.println(check);
-		System.out.println(kount);
+		System.out.println("MyFirstTag implements Tag (output below)");
+		System.out.println("check = " + check);
+		System.out.println("kount = " + kount);
+		System.out.println("JspWriter buffer size : " + jspContext.getOut().getBufferSize() + " bytes");
 		if(check) {
 			return EVAL_BODY_INCLUDE;
 		} else {
@@ -33,9 +54,8 @@ public class MyFirstTag implements Tag {
 	}
 
 	@Override
-	public Tag getParent() {
-		// TODO Auto-generated method stub
-		return null;
+	public Tag getParent() {		
+		return parentTag;
 	}
 
 	@Override

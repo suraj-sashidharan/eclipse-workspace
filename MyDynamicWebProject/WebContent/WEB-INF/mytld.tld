@@ -10,8 +10,8 @@
   <body-content>scriptless</body-content>
   <variable>
    <name-given>bla</name-given>
-   <variable-class>java.lang.String</variable-class>
-   <scope>AT_BEGIN</scope>
+   <variable-class>java.util.Date</variable-class>
+   <scope>NESTED</scope>
   </variable>
   <attribute>
    <name>check</name>

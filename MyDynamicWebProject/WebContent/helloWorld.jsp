@@ -28,8 +28,10 @@
 			value='<jsp:getProperty property="mobileNum" name="contact"/>'></input>
 		<input type="submit"></input>
 	</form>
-	<mtl:mft check="${1<2}" kount="3">
+	<c:out value="bla:${bla}"/>
+	<mtl:mft check="${1==2}" kount="3">
 	   <c:out value="${x}"/>
 	</mtl:mft>
+	<c:out value="bla:${bla}"/>
 </body>
 </html>
