@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Contacts</title>
 </head>
-<body>
+<body>    
     <c:set var="x" value="MangaPayale"/>
     <c:out value="${x}"/>
     <%--= request.getParameter("name") --%>
