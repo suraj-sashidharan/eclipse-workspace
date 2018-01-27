@@ -8,18 +8,25 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 public class PrintMapOfStringToStringArrayTag extends SimpleTagSupport {
-	private Map<String, String[]> headerMap;
+	private Map<String, String[]> map;
+	private String caption;
 	
-	public void setHeaderMap(Map<String, String[]> arg0) {
-		headerMap = arg0;
-		System.out.println(headerMap==null ? "headerMap null":"headerMap not null");
+	public void setMap(Map<String, String[]> arg0) {
+		map = arg0;
+		System.out.println(map==null ? "headerMap null":"headerMap not null");
+	}
+	public void setCaption(String caption) {
+		this.caption = caption;
 	}
 	
 	public void doTag() {
 		try {
 			JspWriter jspWriter = getJspContext().getOut();
 			jspWriter.write("<table>");
-			Set<Map.Entry<String, String[]>> entrySet = headerMap.entrySet();
+			jspWriter.write("<caption>");
+			jspWriter.write(caption);
+			jspWriter.write("</caption>");
+			Set<Map.Entry<String, String[]>> entrySet = map.entrySet();
 			for(Map.Entry<String, String[]> entry:entrySet) {
 				jspWriter.write("<tr><td>");
 				String headerName = (String) entry.getKey();

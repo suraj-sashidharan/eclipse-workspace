@@ -8,6 +8,7 @@
 <title>Default page index.jsp</title>
 </head>
 <body>
-   <mtl:printMapStringToStringArray headerMap="${headerValues}"/>
+   <mtl:printMapStringToStringArray caption="Request headers" map="${headerValues}"/>
+   <mtl:printMapStringToStringArray caption="Request parameters" map="${paramValues}"/>
 </body>
 </html>

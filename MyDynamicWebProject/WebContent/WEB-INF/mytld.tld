@@ -30,10 +30,15 @@
   <tag-class>edu.suraj.mydynamicwebproject.PrintMapOfStringToStringArrayTag</tag-class>
   <body-content>empty</body-content>
   <attribute>
-   <name>headerMap</name>
+   <name>map</name>
    <required>true</required>
    <rtexprvalue>true</rtexprvalue>
    <type>java.util.Map</type>
+  </attribute>
+  <attribute>
+   <name>caption</name>
+   <required>true</required>
+   <rtexprvalue>false</rtexprvalue>
   </attribute>
  </tag>
 </taglib>
